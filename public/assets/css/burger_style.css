@@ -1,0 +1,21 @@
+header {
+  text-align: center;
+}
+
+li {
+  padding: 5px;
+  margin: 5px;
+  background: #faebd7;
+  position: relative;
+}
+
+/* .devour {
+  
+  position: absolute;
+  right: 5%;
+  height: 100%;
+} */
+
+#submitBtn {
+  width: 100%;
+}
