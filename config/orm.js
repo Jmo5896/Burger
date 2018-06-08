@@ -1,15 +1,6 @@
 //HERE ARE THE METHODS THAT WILL BE CALLED IN OTHER PLACES
 var connection = require('../config/connection.js');
 
-//function for getting question marks
-function printQuestionMarks(num) {
-    var arr = [];
-    for (var i = 0; i < num; i++) {
-        arr.push('?');
-    }
-    return arr.toString();
-}
-
 // Helper function to convert object key/value pairs to SQL syntax
 function objectToSql(object) {
     var arr = [];
@@ -33,18 +24,19 @@ function objectToSql(object) {
 
 var orm = {
     selectAll: function(table, callBack) {
-        var queryString = `SELECT burger_name FROM ${table};`;
+        var queryString = `SELECT * FROM ${table};`;
         connection.query(queryString, function(error, result) {
             if (error) throw error;
             callBack(result);
         });
     },
     insertOne: function(table, column, value, callBack) {
-        var queryString = `INSERT into ${table} ('${columns.toString()}') VALUES ('${printQuestionMarks(values.length)}') `;
+        
+        var queryString = `INSERT INTO ${table} (${column}) VALUES ('${value}'); `;
 
         console.log(queryString);
 
-        connection.query(queryString, values, function(error, result) {
+        connection.query(queryString, function(error, result) {
             if (error) throw error;
             callBack(result);
         });
