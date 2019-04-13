@@ -12,8 +12,8 @@ var burger = {
             callBack(res);
         });
     },
-    updateOne: function(objects_columns_values, condition, callBack) {
-        orm.updateOne('burger_table', objects_columns_values, condition, function(res) {
+    updateOne: function(condition, callBack) {
+        orm.updateOne('burger_table', {devoured: true}, condition, function(res) {
             callBack(res);
         });
     }

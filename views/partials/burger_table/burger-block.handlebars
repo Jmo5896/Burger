@@ -1,6 +1,6 @@
 <li>
     {{burger_name}}
-    <button class = 'devour btn btn-primary' data-id = '{{burger_id}}' data-newdevour = '{{devour}}'>
-        {{#unless devour}}DEVOUR!{{/unless}} 
-    </button>
+    {{#unless this.devour}}
+    <button class='devour btn btn-primary' data-id='{{this.burger_id}}'>DEVOUR!</button>
+    {{/unless}}
 </li>

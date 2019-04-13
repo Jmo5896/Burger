@@ -43,7 +43,7 @@ var orm = {
         
     },
     updateOne: function(table, objects_columns_values, condition, callBack) {
-        var queryString = `UPDATE ${tables} SET ${objectToSql(objects_columns_values)} WHERE ${condition}`;
+        var queryString = `UPDATE ${table} SET ${objectToSql(objects_columns_values)} WHERE ${condition}`;
         connection.query(queryString,function(error, result) {
             if (error) throw error;
             callBack(result);
